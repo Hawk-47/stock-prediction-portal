@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './assets/css/style.css'
+import Header from './components/Header'
+
 
 function App() {
 
   return (
     <>
-
+      <Header />
     </>
   )
 }
