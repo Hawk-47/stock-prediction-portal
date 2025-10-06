@@ -32,37 +32,39 @@ const Register = () => {
         }
     }
     return (
-        <div className='container'>
-            <div className="row justify-content-center">
-                <div className="col-md-6 bg-light-dark p-5 rounded">
-                    <h3 className='text-light text-center mb-4'>Create An Account</h3>
-                    <form onSubmit={handleRegistration}>
-                        <div className='mb-3'>
-                            <input type="text" className='form-control' placeholder='Enter username' value={username} onChange={(e) => setUsername(e.target.value)} />
-                            {/* ✅ username error show */}
-                            <small>{errors.username && <div className='text-danger'>{errors.username}</div>}</small>
-                        </div>
-                        <div className='mb-3'>
-                            <input type="email" className='form-control ' placeholder='Enter email address' value={email} onChange={(e) => setEmail(e.target.value)} />
-                            {/* ✅ email error show */}
-                            <small>{errors.email && <div className='text-danger'>{errors.email}</div>}</small>
-                        </div>
-                        <div className='mb-5'>
-                            <input type="password" className='form-control ' placeholder='Set password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                            {/* ✅ password error show */}
-                            <small>{errors.password && <div className='text-danger'>{errors.password}</div>}</small>
-                        </div>
-                        {success && <div className='alert alert-success'>Registration successful! You can now log in.</div>}
-                        {loading ? (
-                            <button type='submit' className='btn btn-info d-block mx-auto' disabled><FontAwesomeIcon icon={faSpinner} />Please wait...</button>
-                        ) : (
-                            <button type='submit' className='btn btn-info d-block mx-auto'>Register</button>
-                        )}
+        <>
+            <div className='container'>
+                <div className="row justify-content-center">
+                    <div className="col-md-6 bg-light-dark p-5 rounded">
+                        <h3 className='text-light text-center mb-4'>Create An Account</h3>
+                        <form onSubmit={handleRegistration}>
+                            <div className='mb-3'>
+                                <input type="text" className='form-control' placeholder='Enter username' value={username} onChange={(e) => setUsername(e.target.value)} />
+                                {/* ✅ username error show */}
+                                <small>{errors.username && <div className='text-danger'>{errors.username}</div>}</small>
+                            </div>
+                            <div className='mb-3'>
+                                <input type="email" className='form-control ' placeholder='Enter email address' value={email} onChange={(e) => setEmail(e.target.value)} />
+                                {/* ✅ email error show */}
+                                <small>{errors.email && <div className='text-danger'>{errors.email}</div>}</small>
+                            </div>
+                            <div className='mb-5'>
+                                <input type="password" className='form-control ' placeholder='Set password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                                {/* ✅ password error show */}
+                                <small>{errors.password && <div className='text-danger'>{errors.password}</div>}</small>
+                            </div>
+                            {success && <div className='alert alert-success'>Registration successful! You can now log in.</div>}
+                            {loading ? (
+                                <button type='submit' className='btn btn-info d-block mx-auto' disabled><FontAwesomeIcon icon={faSpinner} />Please wait...</button>
+                            ) : (
+                                <button type='submit' className='btn btn-info d-block mx-auto'>Register</button>
+                            )}
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
